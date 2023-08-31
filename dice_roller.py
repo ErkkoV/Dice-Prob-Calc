@@ -1,4 +1,4 @@
-import math
+import random
 
 def standard_dice(dice_max):
     dice_sides = []
@@ -7,7 +7,7 @@ def standard_dice(dice_max):
     return dice_sides
 
 def die_roll(dice_sides):
-    dice_side_num = math.random(1, len(dice_sides))
+    dice_side_num = random.randint(1, len(dice_sides))
     return dice_sides[dice_side_num]
 
 def dice_roll(amount, dice):
