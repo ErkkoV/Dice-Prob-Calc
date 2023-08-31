@@ -3,23 +3,22 @@ import random
 def standard_dice(dice_max):
     dice_sides = []
     for i in range(dice_max):
-        dice_sides.append(i)
+        dice_sides.append(i+1)
     return dice_sides
 
 def die_roll(dice_sides):
-    dice_side_num = random.randint(1, len(dice_sides))
+    dice_side_num = random.randint(0, len(dice_sides) -1)
     return dice_sides[dice_side_num]
 
-def dice_roll(amount, dice):
+def dice_roll(custom, amount, dice):
     dice_sides = []
-    if len(dice) > 1:
-        dice_results = dice
-    elif len(dice) == 1:
-        dice_results = standard_dice(dice[0])
+    if custom:
+        dice_sides = dice
+    else:
+        dice_sides = standard_dice(dice)
 
     dice_results = []
-    for i in range(amount):
+    for _ in range(amount):
         dice_results.append(die_roll(dice_sides))
     
-    return dice_results
-    
+    return dice_results   
