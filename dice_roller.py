@@ -27,7 +27,6 @@ def add_dice(dice_results):
     return sum(dice_results)
 
 def dice_sum(dice_results, rules):
-    
     final_result = {}
     if ('add' in rules):
         if ('hgh' in rules):
@@ -44,9 +43,13 @@ def dice_sum(dice_results, rules):
 
     return final_result
 
-print(dice_sum(dice_roll(False, 5, 10), {'add': True, 'hgh': 3}))
+#custom, boolean, true if dice has custom values as sides
+#amount, integer, amount of dice rolled
+#dice, integer or list. Highest side as integer if custom = false, list of integers if true
+#dictionary with key-value pairs.
+#returns dictionary: {result: integer(total dice sum), dice_results: list[integer](dice rolls)}
+def dice_roller(custom, amount, dice, rules):
+    return dice_sum(dice_roll(custom, amount, dice), rules)
 
-# rules = json template?
-# read rules as switch case?
-# dice roll template: "[num]d[roll][rules]"
-        
+# print(dice_roller(False, 4, 10, {'add': True, 'hgh': 4}))
+
