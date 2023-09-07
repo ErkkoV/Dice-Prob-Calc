@@ -12,26 +12,30 @@ def roll_input_parser(input):
         if '[' in roll_str:
             roll_list = re.findall(r'\d+', roll_str)
             roll = [int(roll_val) for roll_val in roll_list]
+            custom = True
         else:
             roll = int(roll_str)
+            custom = False
 
-        rule_components = []
+        rule_components = {}
 
         for rule in rules.split(','):
             rule_match = re.match(r'([a-zA-Z]+)(\d+)', rule.strip())
             if rule_match:
                 rule_type = rule_match.group(1)
                 rule_value = int(rule_match.group(2))
-                rule_components.append((rule_type, rule_value))
-
-        return num, roll, rule_components
+                rule_components[rule_type] = rule_value
+                
+        return custom, num, roll, rule_components
     else:
         raise ValueError("Input format not valid")
+    
+
     
 # print(roll_input_parser("3d[6,8,10][add2,bes51,mul3]"))
 
 # Example input
-# input_str = "3d[6,8,10][add2,bes51,mul3]"
+# input_str = "3d[6,8,10][add2,bes51,mul3]""3d[6,8,10][add2,bes51,mul3]"
 
 # example use
 # num, roll, rule_components = roll_input(input_str)
