@@ -18,11 +18,20 @@ while True:
     user_input = input("\nEnter a roll or command: ")
 
     if (user_input == "info"):
-        info_instructions()
+        try:
+            info_instructions()
+        except:
+            print('Invalid instruction syntax')
     elif (user_input.startswith('r')):
-        roll_from_input(user_input[1:])
+        try:
+            roll_from_input(user_input[1:])
+        except:
+            print('Invalid roll syntax')
     elif (user_input == "" or user_input == "guided"):
-        guided_roll()
+        try:
+            guided_roll()
+        except:
+            print('Invalid guided roll syntax')
     else:
         print('Invalid command: type "info" for instruction.')
 
