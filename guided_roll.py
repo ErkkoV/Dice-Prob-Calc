@@ -1,5 +1,3 @@
-from dice_roller import dice_roller
-
 rule_list = {
     'add': 'True value, ie: <1>',
     'hgh': 'Number of the highest results in the roll added together',
@@ -60,5 +58,6 @@ def guided_roll():
     print(f'You roll {dice_amount_input} dices with {die_sides} sides. You use rules: {rules}')
     
     print('\n')
-    result = dice_roller(custom_die, dice_amount_input, die_sides, rules)
-    print(result)
+    return (custom_die, dice_amount_input, die_sides, rules)
+
+    
