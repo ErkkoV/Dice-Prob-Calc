@@ -19,6 +19,7 @@ def guided_rolling():
     roll_history.append(results)
 
 round = 0
+saved = False
 
 while True:
     if (round < 1):
@@ -43,14 +44,19 @@ while True:
             print('Invalid guided roll syntax')
     elif (user_input == 'load'):
         try:
-            load_rolls(roll_history)
+            rolls = load_rolls()
+            print('Loaded rolls:')
+            for roll in rolls:
+                roll_history.append(roll)
+                print(roll)
         except:
-            print('Error in loading roll history')
+            print('Error in loading rolls')
     elif (user_input == 'save'):
         try:
             save_rolls(roll_history)
         except:
-            print('Error in loading roll history')
+            print('Error in saving rolls')
+
     else:
         print('Invalid command: type "info" for instruction.')
 
