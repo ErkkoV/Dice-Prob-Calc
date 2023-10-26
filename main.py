@@ -4,6 +4,20 @@ from guided_roll import guided_roll
 from instructions import (start_instructions, info_instructions)
 from saving import (load_rolls, save_rolls)
 
+auto_save = False
+auto_load = False
+
+try:
+    with open('settings.txt', 'r') as file:
+        for setting in file:
+            if setting.startswith('AUTOSAVE'):
+                auto_save = setting.split('=')[1].strip() == 'True'
+                
+            if setting.startswith('AUTOLOAD'):
+                auto_load = setting.split('=')[1].strip() == 'True'
+except:
+    print('Error in loading settings')
+
 roll_history = []
 
 def roll_from_input(roll_input):
@@ -11,18 +25,29 @@ def roll_from_input(roll_input):
     results = dice_roller(*roll)
     print(results)
     roll_history.append(results)
+    if auto_save:
+        save_rolls(roll_history)
 
 def guided_rolling():
     roll = guided_roll()
     results = dice_roller(*roll)
     print(results)
     roll_history.append(results)
+    if auto_save:
+        save_rolls(roll_history)
 
 round = 0
 saved = False
 
 while True:
     if (round < 1):
+        if auto_load:
+            try:
+                 roll_history = load_rolls()
+                 print('Rolls autoloaded')
+            except:
+                print('Error in loading rolls')
+            
         start_instructions()
     
     user_input = input("\nEnter a roll or command: ")
