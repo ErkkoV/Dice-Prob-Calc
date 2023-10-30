@@ -30,16 +30,3 @@ def roll_input_parser(input):
         return custom, num, roll, rule_components
     else:
         raise ValueError("Input format not valid")
-
-
-# print(roll_input_parser("3d[6,8,10][add2,bes51,mul3]"))
-
-# Example input
-# input_str = "3d[6,8,10][add2,bes51,mul3]""3d[6,8,10][add2,bes51,mul3]"
-
-# example use
-# num, roll, rule_components = roll_input(input_str)
-
-# print("Number of rolls:", num)
-# print("Sides on the dice:", roll)
-# print("Rule components:", ", ".join([f"{rule_type}{rule_value}" for rule_type, rule_value in rule_components]))

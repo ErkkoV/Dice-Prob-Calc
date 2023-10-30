@@ -87,7 +87,3 @@ while True:
         print('Invalid command: type "info" for instruction.')
 
     round += 1
-
-
-# example 4d[1,2,2,2,2,3][add1,hgh2][add1,hgh2]
-# example 5d10[add1,hgh3]
