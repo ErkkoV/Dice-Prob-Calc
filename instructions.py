@@ -1,6 +1,6 @@
 def start_instructions():
     print(
-    '''
+        """
     Welcome to the dice roller!
 
     Type any command to start!
@@ -16,8 +16,9 @@ def start_instructions():
     Examples:
     r4d[1,2,2,2,2,3][add1,hgh2] rolls 4 dices with sides [1, 2, 2, 2, 2, 3], adds two highest results together
     r5d10[add1,hgh3] rolls 5 ten-sided dice, adds 3 highest results together.
-    '''
+    """
     )
 
+
 def info_instructions():
-    print('placeholder')
+    print("placeholder")
