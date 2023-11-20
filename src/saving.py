@@ -2,17 +2,21 @@ import csv
 import os
 import ast
 
+SRC_FOLDER = "src"
+
 
 def create_rolls_csv_if_not_exists():
-    if not os.path.isfile("rolls.csv"):
-        with open("rolls.csv", mode="w", newline="") as file:
+    csv_path = os.path.join(SRC_FOLDER, "rolls.csv")
+    if not os.path.isfile(csv_path):
+        with open(csv_path, mode="w", newline="") as file:
             writer = csv.writer(file)
             writer.writerow(["result", "dice_results"])  # Write the header row
 
 
 def save_rolls(rolls):
     create_rolls_csv_if_not_exists()
-    with open("rolls.csv", mode="w", newline="") as file:
+    csv_path = os.path.join(SRC_FOLDER, "rolls.csv")
+    with open(csv_path, mode="w", newline="") as file:
         writer = csv.writer(file)
         writer.writerow(["result", "dice_results"])  # Write the header row
         for roll in rolls:
@@ -21,8 +25,9 @@ def save_rolls(rolls):
 
 def load_rolls():
     create_rolls_csv_if_not_exists()
+    csv_path = os.path.join(SRC_FOLDER, "rolls.csv")
     rolls = []
-    with open("rolls.csv", mode="r", newline="") as file:
+    with open(csv_path, mode="r", newline="") as file:
         reader = csv.reader(file)
         header = next(reader)
         for row in reader:
