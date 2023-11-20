@@ -1,3 +1,4 @@
+import os
 from dice_roller import dice_roller
 from roll_input_parser import roll_input_parser
 from guided_roll import guided_roll
@@ -8,7 +9,8 @@ auto_save = False
 auto_load = False
 
 try:
-    with open("settings.txt", "r") as file:
+    settings_path = os.path.join("src", "settings.txt")
+    with open(settings_path, "r") as file:
         for setting in file:
             if setting.startswith("AUTOSAVE"):
                 auto_save = setting.split("=")[1].strip() == "True"
