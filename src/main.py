@@ -75,13 +75,18 @@ while True:
             rolls = load_rolls()
             print("Loaded rolls:")
             for roll in rolls:
-                roll_history.append(roll)
+                if not auto_load:
+                    roll_history.append(roll)
                 print(roll)
         except:
             print("Error in loading rolls")
     elif user_input == "save":
         try:
-            save_rolls(roll_history)
+            if not auto_save:
+                save_rolls(roll_history)
+                print("Rolls saved")
+            else:
+                print("Autosave is already on")
         except:
             print("Error in saving rolls")
 
