@@ -7,6 +7,22 @@ from saving import load_rolls, save_rolls
 
 
 def main_roller():
+    """
+    Main function for the dice roller application.
+
+    Loads settings, processes user input for rolling dice, and provides options for saving/loading rolls.
+
+    Commands:
+    - "info": Display roll-syntax instructions.
+    - "r": Direct roll input.
+    - "guided": Guided roll sequence.
+    - "load": Load and display saved rolls.
+    - "save": Save current roll history.
+
+    Returns:
+    None
+    """
+
     auto_save = False
     auto_load = False
 

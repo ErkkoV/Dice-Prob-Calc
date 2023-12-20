@@ -23,6 +23,16 @@
 <td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
     
 <tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
-<td class="singlecolumn"><dl><dt><a name="-roll_input_parser"><strong>roll_input_parser</strong></a>(input)</dt></dl>
+<td class="singlecolumn"><dl><dt><a name="-roll_input_parser"><strong>roll_input_parser</strong></a>(input)</dt><dd><span class="code">Parse&nbsp;input&nbsp;using&nbsp;a&nbsp;regular&nbsp;expression&nbsp;to&nbsp;extract&nbsp;roll&nbsp;components.<br>
+&nbsp;<br>
+Parameters:<br>
+-&nbsp;input&nbsp;(str):&nbsp;Input&nbsp;string&nbsp;representing&nbsp;a&nbsp;dice&nbsp;roll.<br>
+&nbsp;<br>
+Returns:<br>
+tuple:&nbsp;A&nbsp;tuple&nbsp;containing&nbsp;(custom,&nbsp;num,&nbsp;roll,&nbsp;rule_components).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;custom&nbsp;(bool):&nbsp;True&nbsp;if&nbsp;using&nbsp;custom&nbsp;die&nbsp;sides,&nbsp;False&nbsp;otherwise.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;num&nbsp;(int):&nbsp;Number&nbsp;of&nbsp;dice&nbsp;to&nbsp;roll.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;roll&nbsp;(list&nbsp;or&nbsp;int):&nbsp;List&nbsp;of&nbsp;custom&nbsp;die&nbsp;sides&nbsp;or&nbsp;the&nbsp;maximum&nbsp;side&nbsp;of&nbsp;the&nbsp;standard&nbsp;die.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;rule_components&nbsp;(dict):&nbsp;Dictionary&nbsp;containing&nbsp;rule&nbsp;types&nbsp;and&nbsp;their&nbsp;corresponding&nbsp;values.</span></dd></dl>
 </td></tr></table>
 </body></html>

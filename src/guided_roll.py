@@ -6,6 +6,12 @@ rule_list = {
 
 
 def rule_adder():
+    """
+    Prompt the user to choose rules from the rule list.
+
+    Returns:
+    dict or False: A dictionary containing the chosen rule, or False if canceled.
+    """
     print("Rules:")
     for index, (key, value) in enumerate(rule_list.items()):
         print(f"Number: {index}, Name: {key}, Value ranges: {value}")
@@ -23,6 +29,12 @@ def rule_adder():
 
 
 def guided_roll():
+    """
+    Perform a guided dice roll based on user input.
+
+    Returns:
+    tuple: A tuple containing (custom_die, dice_amount_input, die_sides, rules).
+    """
     print("\n")
     dice_amount_input = input(
         "How many dice will you roll, type a number or press enter for 1: "
@@ -40,14 +52,14 @@ def guided_roll():
     print("\n")
     if dice_type_input == "n":
         die_list = input(
-            "Enter dice sides as a number list separated by comma, ie: <1, 2, 3, 4, 5, 6> for the normal six sided die: "
+            "Enter dice sides as a number list separated by comma, ie: <1, 2, 3, 4, 5, 6> for the normal six-sided die: "
         )
         separated_list = die_list.split(",")
         die_sides = [int(side.strip()) for side in separated_list]
         custom_die = True
     else:
         die_max = input(
-            "Enter maximun side of the die, ie: 6 for six sided normal die: "
+            "Enter maximum side of the die, ie: 6 for six-sided normal die: "
         )
         if die_max == "":
             die_sides = 6
@@ -68,7 +80,7 @@ def guided_roll():
 
     print("\n")
     print(
-        f"You roll {dice_amount_input} dices with {die_sides} sides. You use rules: {rules}"
+        f"You roll {dice_amount_input} dice(s) with {die_sides} sides. You use rules: {rules}"
     )
 
     print("\n")

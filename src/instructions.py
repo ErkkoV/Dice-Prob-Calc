@@ -1,4 +1,6 @@
 def start_instructions():
+    """Prints welcome message and instructions for using the dice roller."""
+
     print(
         """
     Welcome to the dice roller!
@@ -21,6 +23,8 @@ def start_instructions():
 
 
 def info_instructions():
+    """Prints instructions explaining the roll-syntax for the dice roller."""
+
     print(
         """
     roll-syntax explained:
