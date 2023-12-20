@@ -23,11 +23,55 @@
 <td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
     
 <tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
-<td class="singlecolumn"><dl><dt><a name="-add_dice"><strong>add_dice</strong></a>(dice_results)</dt></dl>
- <dl><dt><a name="-dice_roll"><strong>dice_roll</strong></a>(custom, amount, dice)</dt></dl>
- <dl><dt><a name="-dice_roller"><strong>dice_roller</strong></a>(custom, amount, dice, rules)</dt></dl>
- <dl><dt><a name="-dice_sum"><strong>dice_sum</strong></a>(dice_results, rules)</dt></dl>
- <dl><dt><a name="-die_roll"><strong>die_roll</strong></a>(dice_sides)</dt></dl>
- <dl><dt><a name="-standard_dice"><strong>standard_dice</strong></a>(dice_max)</dt></dl>
+<td class="singlecolumn"><dl><dt><a name="-add_dice"><strong>add_dice</strong></a>(dice_results)</dt><dd><span class="code">Calculate&nbsp;the&nbsp;sum&nbsp;of&nbsp;the&nbsp;values&nbsp;in&nbsp;the&nbsp;given&nbsp;list.<br>
+&nbsp;<br>
+Parameters:<br>
+-&nbsp;dice_results&nbsp;(list):&nbsp;List&nbsp;of&nbsp;values&nbsp;to&nbsp;be&nbsp;summed.<br>
+&nbsp;<br>
+Returns:<br>
+int:&nbsp;The&nbsp;sum&nbsp;of&nbsp;the&nbsp;values&nbsp;in&nbsp;the&nbsp;list.</span></dd></dl>
+ <dl><dt><a name="-dice_roll"><strong>dice_roll</strong></a>(custom, amount, dice)</dt><dd><span class="code">Roll&nbsp;a&nbsp;specified&nbsp;number&nbsp;of&nbsp;dice&nbsp;with&nbsp;customizable&nbsp;sides.<br>
+&nbsp;<br>
+Parameters:<br>
+-&nbsp;custom&nbsp;(bool):&nbsp;If&nbsp;True,&nbsp;use&nbsp;the&nbsp;provided&nbsp;dice&nbsp;list;&nbsp;if&nbsp;False,&nbsp;use&nbsp;standard&nbsp;dice.<br>
+-&nbsp;amount&nbsp;(int):&nbsp;The&nbsp;number&nbsp;of&nbsp;dice&nbsp;to&nbsp;roll.<br>
+-&nbsp;dice&nbsp;(list):&nbsp;List&nbsp;of&nbsp;possible&nbsp;values&nbsp;for&nbsp;the&nbsp;dice&nbsp;(if&nbsp;custom&nbsp;is&nbsp;True)&nbsp;or&nbsp;the&nbsp;maximum&nbsp;value&nbsp;of&nbsp;standard&nbsp;dice.<br>
+&nbsp;<br>
+Returns:<br>
+list:&nbsp;List&nbsp;of&nbsp;results&nbsp;from&nbsp;rolling&nbsp;the&nbsp;dice.</span></dd></dl>
+ <dl><dt><a name="-dice_roller"><strong>dice_roller</strong></a>(custom, amount, dice, rules)</dt><dd><span class="code">Perform&nbsp;a&nbsp;dice&nbsp;roll,&nbsp;process&nbsp;the&nbsp;results&nbsp;based&nbsp;on&nbsp;specified&nbsp;rules,&nbsp;and&nbsp;return&nbsp;the&nbsp;final&nbsp;result.<br>
+&nbsp;<br>
+Parameters:<br>
+-&nbsp;custom&nbsp;(bool):&nbsp;If&nbsp;True,&nbsp;use&nbsp;the&nbsp;provided&nbsp;dice&nbsp;list;&nbsp;if&nbsp;False,&nbsp;use&nbsp;standard&nbsp;dice.<br>
+-&nbsp;amount&nbsp;(int):&nbsp;The&nbsp;number&nbsp;of&nbsp;dice&nbsp;to&nbsp;roll.<br>
+-&nbsp;dice&nbsp;(list):&nbsp;List&nbsp;of&nbsp;possible&nbsp;values&nbsp;for&nbsp;the&nbsp;dice&nbsp;(if&nbsp;custom&nbsp;is&nbsp;True)&nbsp;or&nbsp;the&nbsp;maximum&nbsp;value&nbsp;of&nbsp;standard&nbsp;dice.<br>
+-&nbsp;rules&nbsp;(dict):&nbsp;Dictionary&nbsp;containing&nbsp;rules&nbsp;for&nbsp;processing&nbsp;the&nbsp;dice&nbsp;results.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Supported&nbsp;rules:&nbsp;"add",&nbsp;"hgh"&nbsp;(highest),&nbsp;"lwt"&nbsp;(lowest).<br>
+&nbsp;<br>
+Returns:<br>
+dict:&nbsp;Dictionary&nbsp;containing&nbsp;the&nbsp;final&nbsp;result&nbsp;and&nbsp;the&nbsp;sorted&nbsp;dice&nbsp;results&nbsp;based&nbsp;on&nbsp;rules.</span></dd></dl>
+ <dl><dt><a name="-dice_sum"><strong>dice_sum</strong></a>(dice_results, rules)</dt><dd><span class="code">Calculate&nbsp;the&nbsp;sum&nbsp;of&nbsp;dice&nbsp;results&nbsp;based&nbsp;on&nbsp;specified&nbsp;rules.<br>
+&nbsp;<br>
+Parameters:<br>
+-&nbsp;dice_results&nbsp;(list):&nbsp;List&nbsp;of&nbsp;dice&nbsp;results&nbsp;to&nbsp;be&nbsp;processed.<br>
+-&nbsp;rules&nbsp;(dict):&nbsp;Dictionary&nbsp;containing&nbsp;rules&nbsp;for&nbsp;processing&nbsp;the&nbsp;dice&nbsp;results.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Supported&nbsp;rules:&nbsp;"add",&nbsp;"hgh"&nbsp;(highest),&nbsp;"lwt"&nbsp;(lowest).<br>
+&nbsp;<br>
+Returns:<br>
+dict:&nbsp;Dictionary&nbsp;containing&nbsp;the&nbsp;final&nbsp;result&nbsp;and&nbsp;the&nbsp;sorted&nbsp;dice&nbsp;results&nbsp;based&nbsp;on&nbsp;rules.</span></dd></dl>
+ <dl><dt><a name="-die_roll"><strong>die_roll</strong></a>(dice_sides)</dt><dd><span class="code">Simulate&nbsp;the&nbsp;roll&nbsp;of&nbsp;a&nbsp;die&nbsp;with&nbsp;the&nbsp;given&nbsp;sides.<br>
+&nbsp;<br>
+Parameters:<br>
+-&nbsp;dice_sides&nbsp;(list):&nbsp;List&nbsp;of&nbsp;possible&nbsp;values&nbsp;for&nbsp;the&nbsp;die<br>
+&nbsp;<br>
+Returns:<br>
+int:&nbsp;The&nbsp;result&nbsp;of&nbsp;the&nbsp;die&nbsp;roll.</span></dd></dl>
+ <dl><dt><a name="-standard_dice"><strong>standard_dice</strong></a>(dice_max)</dt><dd><span class="code">Generate&nbsp;a&nbsp;list&nbsp;representing&nbsp;standard&nbsp;dice&nbsp;with&nbsp;values&nbsp;from&nbsp;1&nbsp;to&nbsp;dice_max.<br>
+&nbsp;<br>
+Parameters:<br>
+-&nbsp;dice_max&nbsp;(int):&nbsp;The&nbsp;maximum&nbsp;value&nbsp;of&nbsp;the&nbsp;standard&nbsp;dice.<br>
+&nbsp;<br>
+Returns:<br>
+list:&nbsp;List&nbsp;of&nbsp;integers&nbsp;representing&nbsp;standard&nbsp;dice.</span></dd></dl>
 </td></tr></table>
 </body></html>

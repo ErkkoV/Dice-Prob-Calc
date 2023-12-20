@@ -2,6 +2,20 @@ import re
 
 
 def roll_input_parser(input):
+    """
+    Parse input using a regular expression to extract roll components.
+
+    Parameters:
+    - input (str): Input string representing a dice roll.
+
+    Returns:
+    tuple: A tuple containing (custom, num, roll, rule_components).
+           - custom (bool): True if using custom die sides, False otherwise.
+           - num (int): Number of dice to roll.
+           - roll (list or int): List of custom die sides or the maximum side of the standard die.
+           - rule_components (dict): Dictionary containing rule types and their corresponding values.
+    """
+
     roll_pattern = r"(\d+)d(\[?\d+.*?\]?)\[(.*?)\]"
 
     match = re.match(roll_pattern, input)
